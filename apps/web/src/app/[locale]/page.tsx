@@ -5,13 +5,14 @@ import { useEffect, useState, type JSX } from 'react';
 import { useStore } from '@repo/shared-state';
 import { useUserStore } from '@repo/shared-state/stores';
 import { LoadingScreen } from '@repo/ui/loading-screen';
-import AccountSummary from '../components/account-summary';
-import QuickActions from '../components/quick-actions';
+import { useTranslations } from '@repo/i18n';
+import AccountSummary from '@/components/account-summary';
+import QuickActions from '@/components/quick-actions';
 
 export default function Page(): JSX.Element {
-  const userStore = useStore(useUserStore, (state) => state);
-
   const [newName, setNewName] = useState<string>('');
+  const t = useTranslations('home');
+  const userStore = useStore(useUserStore, (state) => state);
 
   useEffect(() => {
     if (userStore) {
@@ -33,9 +34,7 @@ export default function Page(): JSX.Element {
   return (
     <MainLayout>
       <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">
-          Bienvenido a tu Banca en Línea
-        </h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
         <div className="grid md:grid-cols-2 gap-8">
           <AccountSummary />
           <QuickActions />

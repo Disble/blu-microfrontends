@@ -1,0 +1,8 @@
+{
+  "common": {
+    "appName": "MyBank"
+  },
+  "home": {
+    "title": "Welcome to your Online Banking"
+  }
+}

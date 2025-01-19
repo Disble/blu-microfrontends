@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { withNextIntl } from '@repo/i18n/plugin';
 
 const { ACCOUNTS_URL } = process.env;
 
@@ -25,4 +26,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

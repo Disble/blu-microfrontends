@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useStore } from '@repo/shared-state';
 import { useUserStore } from '@repo/shared-state/stores';
+import { useTranslations } from '@repo/i18n';
 import { LoadingScreen } from './loading-screen';
 
 export const Header = () => {
   const pathname = usePathname();
-
+  const t = useTranslations('common');
   const userStore = useStore(useUserStore, (state) => state);
 
   if (!userStore) {
@@ -23,7 +24,7 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a className="text-2xl font-bold" href="/">
-          MiBanco
+          {t('appName')}
         </a>
         <nav>
           <ul className="flex space-x-4">

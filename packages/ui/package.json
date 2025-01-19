@@ -26,6 +26,7 @@
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/shared-state": "workspace:*",
+    "@repo/i18n": "workspace:*",
     "@types/react": "19",
     "@types/react-dom": "19",
     "@types/node": "20",

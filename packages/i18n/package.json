@@ -1,0 +1,27 @@
+{
+  "name": "@repo/i18n",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.ts",
+    "./plugin": "./src/plugin.ts",
+    "./routing": "./src/routing.ts",
+    "./middleware": "./src/middleware.ts",
+    "./request": "./src/request.ts",
+    "./server": "./src/server.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist && rm -rf .turbo",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next-intl": "3.26.3"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "5"
+  }
+}
