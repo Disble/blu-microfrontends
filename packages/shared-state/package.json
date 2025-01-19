@@ -1,0 +1,29 @@
+{
+  "name": "@repo/shared-state",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "exports": {
+    ".": [
+      "./src/store.ts"
+    ],
+    "./stores": [
+      "./src/stores/user-store.ts"
+    ]
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ./dist && rm -rf .turbo",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zustand": "5.0.3",
+    "react": "19.0.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "19",
+    "typescript": "5"
+  }
+}

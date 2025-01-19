@@ -1,34 +1,36 @@
 {
   "name": "@repo/ui",
   "version": "0.0.0",
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "sideEffects": false,
   "files": [
     "dist"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css",
-    "./card": "./src/card.tsx"
+    "./main-layout": "./src/main-layout.tsx",
+    "./loading-screen": "./src/loading-screen.tsx"
   },
   "license": "MIT",
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "clean": "rm -rf ./dist && rm -rf .turbo",
     "lint": "eslint src/",
-    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "next": "15.1.5"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "15.1.5",
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/react": "^18.2.61",
-    "autoprefixer": "^10.4.18",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "typescript": "5.5.4"
+    "@repo/shared-state": "workspace:*",
+    "@types/react": "19",
+    "@types/react-dom": "19",
+    "@types/node": "20",
+    "typescript": "5",
+    "postcss": "8",
+    "tailwindcss": "3.4.1"
   }
 }
