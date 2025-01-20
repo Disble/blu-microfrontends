@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
         source: '/accounts-static/:path*',
         destination: `${ACCOUNTS_URL}/accounts-static/:path*`,
       },
+      {
+        source: '/cards',
+        destination: `${ACCOUNTS_URL}/cards`,
+      },
     ];
   },
 };
