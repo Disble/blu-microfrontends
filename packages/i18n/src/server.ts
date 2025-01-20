@@ -1,1 +1,1 @@
-export { getMessages } from 'next-intl/server';
+export { getMessages, getLocale } from 'next-intl/server';

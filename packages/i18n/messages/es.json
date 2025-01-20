@@ -4,5 +4,8 @@
   },
   "home": {
     "title": "Bienvenido a tu Banca en Línea"
+  },
+  "accounts": {
+    "title": "Mis Cuentas"
   }
 }

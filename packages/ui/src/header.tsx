@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useStore } from '@repo/shared-state';
 import { useUserStore } from '@repo/shared-state/stores';
 import { useTranslations } from '@repo/i18n';
 import { LoadingScreen } from './loading-screen';
+import { setLocale } from './actions/locale';
 
 export const Header = () => {
+  const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations('common');
   const userStore = useStore(useUserStore, (state) => state);
@@ -16,7 +18,13 @@ export const Header = () => {
     return <LoadingScreen />;
   }
 
-  const { theme, name, setTheme } = userStore;
+  const { theme, name, setTheme, language, setLanguage } = userStore;
+
+  const changeLocale = async (newLocale: string) => {
+    setLanguage(newLocale as any);
+    await setLocale(newLocale);
+    router.refresh(); // Refresh the page to apply the new locale
+  };
 
   return (
     <header
@@ -68,6 +76,20 @@ export const Header = () => {
           >
             {theme === 'light' ? 'Modo Oscuro' : 'Modo Claro'}
           </button>
+          <select
+            className={`px-2 py-1 rounded ${
+              theme === 'light'
+                ? 'bg-white text-blue-600'
+                : 'bg-gray-600 text-white'
+            } hover:bg-opacity-90 transition-colors`}
+            onChange={(e) => {
+              changeLocale(e.target.value);
+            }}
+            value={language}
+          >
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
         </div>
       </div>
     </header>

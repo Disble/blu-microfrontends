@@ -2,15 +2,18 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
 type Theme = 'light' | 'dark';
+type Language = 'es' | 'en';
 
 interface UserState {
   name: string;
   theme: Theme;
+  language: Language;
 }
 
 interface UserStore extends UserState {
   setName: (name: string) => void;
   setTheme: (theme: Theme) => void;
+  setLanguage: (language: Language) => void;
 }
 
 export const useUserStore = create(
@@ -18,11 +21,15 @@ export const useUserStore = create(
     (set) => ({
       name: 'Usuario',
       theme: 'light',
+      language: 'es',
       setName: (name) => {
         set({ name });
       },
       setTheme: (theme) => {
         set({ theme });
+      },
+      setLanguage: (language) => {
+        set({ language });
       },
     }),
     {

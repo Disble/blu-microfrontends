@@ -4,5 +4,8 @@
   },
   "home": {
     "title": "Welcome to your Online Banking"
+  },
+  "accounts": {
+    "title": "My Accounts"
   }
 }

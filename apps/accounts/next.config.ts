@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { withNextIntl } from '@repo/i18n/plugin';
 
 const nextConfig: NextConfig = {
   assetPrefix: '/accounts-static',
@@ -18,4 +19,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

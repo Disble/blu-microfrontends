@@ -150,16 +150,37 @@ importers:
 
   packages/i18n:
     dependencies:
+      next:
+        specifier: 15.1.5
+        version: 15.1.5(react-dom@19.0.0)(react@19.0.0)
       next-intl:
         specifier: 3.26.3
         version: 3.26.3(next@15.1.5)(react@19.0.0)
+      react:
+        specifier: 19.0.0
+        version: 19.0.0
+      react-dom:
+        specifier: 19.0.0
+        version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: 15.1.5
+        version: 15.1.5
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
+      '@types/node':
+        specifier: '20'
+        version: 20.11.24
+      '@types/react':
+        specifier: '19'
+        version: 19.0.7
+      '@types/react-dom':
+        specifier: '19'
+        version: 19.0.3(@types/react@19.0.7)
       typescript:
         specifier: '5'
         version: 5.5.4

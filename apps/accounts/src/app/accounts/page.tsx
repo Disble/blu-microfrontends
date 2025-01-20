@@ -4,10 +4,12 @@ import { MainLayout } from '@repo/ui/main-layout';
 import { LoadingScreen } from '@repo/ui/loading-screen';
 import { useStore } from '@repo/shared-state';
 import { useUserStore } from '@repo/shared-state/stores';
+import { useTranslations } from '@repo/i18n';
 import AccountActions from '@/components/account-actions';
 import AccountList from '@/components/account-list';
 
 export default function AccountsPage() {
+  const t = useTranslations('accounts');
   const userStore = useStore(useUserStore, (state) => state);
 
   if (!userStore) {
@@ -19,7 +21,7 @@ export default function AccountsPage() {
   return (
     <MainLayout>
       <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8">Mis Cuentas</h1>
+        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <AccountList />
