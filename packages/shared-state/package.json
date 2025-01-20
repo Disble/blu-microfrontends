@@ -2,6 +2,7 @@
   "name": "@repo/shared-state",
   "version": "0.0.0",
   "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": [
       "./src/store.ts"
